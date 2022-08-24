@@ -1,0 +1,11 @@
+img {
+  padding: 10px;
+  width: 300px;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all .3s;
+    opacity: .8;
+}
