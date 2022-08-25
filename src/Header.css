@@ -6,10 +6,12 @@
     display: flex;
     align-items: center;
     font-family: 'Aboreto', cursive;
+    font-size: 3vw;
+    letter-spacing: .5vw;
+    text-shadow: 6px 6px 8px #000000a5;
     margin: 0;
     background-image: url(./assets/retro-banner.png);
     min-height: 400px;
-
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
