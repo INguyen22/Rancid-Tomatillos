@@ -1,4 +1,5 @@
 import React from "react"
+import HomeButton from "./HomeButton"
 import "./MovieCard.css"
 
 // const MovieCard = ( {id, title, description, rating, image , showMovieDetails} ) => {
@@ -53,7 +54,7 @@ class MovieCard extends React.Component {
             <div>
                 {this.state.wasClicked ?
                 <div>
-                    <button onClick={this.returnHome}>🏠</button>
+                    <button className="home-button" onClick={this.returnHome}>{<HomeButton />}</button>
                     <img src={this.state.backdropImage} alt={this.state.title}/>
                     <h2>{this.state.title}</h2>
                     <p>{this.state.rating.toFixed(1)}</p>
