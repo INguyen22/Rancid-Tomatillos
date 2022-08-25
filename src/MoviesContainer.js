@@ -2,7 +2,7 @@ import React from "react"
 import MovieCard from "./MovieCard"
 import "./MoviesContainer.css"
 
-const MoviesContainer = ({ movies, showMovieDetails, goBack }) => {
+const MoviesContainer = ({ movies , showMovieDetails, goBack}) => {
     const movieCards = movies.map(movie => {
         return (
             <MovieCard 

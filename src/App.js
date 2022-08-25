@@ -11,16 +11,13 @@ class App extends React.Component {
     this.showMovieDetails = this.showMovieDetails.bind(this)
     this.goBack = this.goBack.bind(this)
   }
-
   showMovieDetails = (id) => {
     const selectedMovie = this.state.movies.filter(movie => movie.id === id)
     this.setState({movies: selectedMovie})
   }
-
   goBack = () => {
     this.setState({movies: movieData.movies})
   }
-
   render() {
     return (
       <main>
