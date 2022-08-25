@@ -3,9 +3,9 @@ import "./HomeButton.css"
 import HomeIcon from "./assets/home.png"
 
 
-const HomeButton = () => {
+const HomeButton = ({onClick}) => {
     return (
-            <button className="home-button">
+            <button className="home-button" onClick={() => onClick()}>
                 <img className="home-icon"  src={HomeIcon} alt="home icon"/>
             </button>
     )
