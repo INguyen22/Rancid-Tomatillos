@@ -55,9 +55,11 @@ class MovieCard extends React.Component {
                 {this.state.wasClicked ?
                 <div>
                     <button className="home-button" onClick={this.returnHome}>{<HomeButton />}</button>
-                    <img src={this.state.backdropImage} alt={this.state.title}/>
-                    <h2>{this.state.title}</h2>
-                    <p>{this.state.rating.toFixed(1)}</p>
+                    <img className="backdrop-img" src={this.state.backdropImage} alt={this.state.title}/>
+                    <article className="details-container">
+                        <h2 className="movie-title">{this.state.title}</h2>
+                        <p className="movie-details">{`⭐️ ${this.state.rating.toFixed(1)} stars ⭐️`}</p>
+                    </article>
                 </div>  
                 :        
                 <img className="card" onClick={this.handleClick} src={this.state.posterImage} alt={this.state.title} />
