@@ -8,13 +8,24 @@ class App extends React.Component {
     this.state = {
       movies: movieData.movies
     }
+    this.showMovieDetails = this.showMovieDetails.bind(this)
+    this.goBack = this.goBack.bind(this)
+  }
+
+  showMovieDetails = (id) => {
+    const selectedMovie = this.state.movies.filter(movie => movie.id === id)
+    this.setState({movies: selectedMovie})
+  }
+
+  goBack = () => {
+    this.setState({movies: movieData.movies})
   }
 
   render() {
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
-        <MoviesContainer movies={this.state.movies}/>
+        <MoviesContainer movies={this.state.movies} showMovieDetails={this.showMovieDetails} goBack={this.goBack}/>
       </main>
     )
   }
