@@ -1,6 +1,7 @@
 import React from "react"
 import movieData from "./mockData"
 import MoviesContainer from "./MoviesContainer"
+import Header from "./Header"
 
 class App extends React.Component {
   constructor() {
@@ -21,7 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <h1>Rancid Tomatillos</h1>
+        <Header />
         <MoviesContainer movies={this.state.movies} showMovieDetails={this.showMovieDetails} goBack={this.goBack}/>
       </main>
     )

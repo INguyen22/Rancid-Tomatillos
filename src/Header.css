@@ -1,0 +1,20 @@
+/* .header {
+    min-height: 550px;
+
+} */
+.image {
+    display: flex;
+    align-items: center;
+    font-family: 'Aboreto', cursive;
+    margin: 0;
+    background-image: url(./assets/retro-banner.png);
+    min-height: 400px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* margin-bottom: 10px; */
+    width: 100%;
+    /* height: 50%; */
+    justify-content: center;
+}
