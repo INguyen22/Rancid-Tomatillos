@@ -1,5 +1,5 @@
 import react from "react"
-import Banner from "./assets/retro-banner.png"
+import Banner from "../../assets/retro-banner.png"
 import "./Header.css"
 
 
