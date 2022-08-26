@@ -9,9 +9,8 @@ const MoviesContainer = ({ movies , showMovieDetails, goBack}) => {
                 key = {movie.id}
                 id = {movie.id}
                 posterImage = {movie.poster_path}
-                backdropImage = {movie.backdrop_path}
                 title = {movie.title}
-                rating = {movie.average_rating}
+                // releaseDate = {movie.release_date}
                 showMovieDetails = {showMovieDetails}
                 goBack = {goBack}
                 />
