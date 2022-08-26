@@ -1,5 +1,5 @@
 import React from "react"
-import HomeButton from "./HomeButton"
+import HomeButton from "../HomeButton/HomeButton"
 import "./MovieCard.css"
 
 // const MovieCard = ( {id, title, description, rating, image , showMovieDetails} ) => {

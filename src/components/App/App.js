@@ -1,7 +1,7 @@
 import React from "react"
-import movieData from "./mockData"
-import MoviesContainer from "./MoviesContainer"
-import Header from "./Header"
+// import movieData from "./mockData"
+import MoviesContainer from "../MoviesContainer/MoviesContainer"
+import Header from "../Header/Header"
 
 class App extends React.Component {
   constructor() {

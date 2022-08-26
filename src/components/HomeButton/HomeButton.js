@@ -1,6 +1,6 @@
 import React from "react"
 import "./HomeButton.css"
-import HomeIcon from "./assets/home.png"
+import HomeIcon from "../../assets/home.png"
 
 
 const HomeButton = ({onClick}) => {
