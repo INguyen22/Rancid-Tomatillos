@@ -2,6 +2,9 @@ import React from "react"
 // import movieData from "./mockData"
 import MoviesContainer from "../MoviesContainer/MoviesContainer"
 import Header from "../Header/Header"
+import { Route, NavLink } from 'react-router-dom'
+import MovieCardDetails from "../MovieCardDetails/MovieCardDetails";
+import MovieCard from "../MovieCard/MovieCard";
 
 class App extends React.Component {
   constructor() {
@@ -14,6 +17,7 @@ class App extends React.Component {
     this.goBack = this.goBack.bind(this)
   }
   fetchAllMovies() {
+    console.log('hiiiiiiii')
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => {
       if(!response.ok) {
@@ -38,9 +42,22 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <Header />
+        <Route path="/" component={ Header }/>
         {this.state.error && <h2>{this.state.error}</h2>}
-        <MoviesContainer movies={this.state.movies} showMovieDetails={this.showMovieDetails} goBack={this.goBack}/>
+        <Route
+            exact path="/:movies"
+            render={({ match }) => {
+              return <MoviesContainer name='movies' data={this.state.movies} />
+            }}
+          />
+        <Route
+            exact path="/movies/:id"     
+            render={({match}) => {
+              const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id));  
+              console.log('PLEASE', movieToRender)
+            return <MovieCard {...movieToRender} goBack={this.goBack}/>
+          }}
+        />
       </main>
     )
   }
