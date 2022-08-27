@@ -17,7 +17,7 @@
 
 .details-container{
   margin-left: 4vw;
-  color: white;
+  color: black;
   font-family: 'Aboreto', cursive;
 }
 
@@ -29,7 +29,7 @@
   font-size: 3vw;
 }
 
-.back-btn {
+/* .back-btn {
   display: block;
   margin: 10px auto;
 }
@@ -40,4 +40,4 @@
 
 .back-btn:hover {
   color: #A4D555;
-}
+} */

@@ -3,7 +3,6 @@ import React from "react"
 import MoviesContainer from "../MoviesContainer/MoviesContainer"
 import Header from "../Header/Header"
 import { Route, Switch, Router } from 'react-router-dom'
-import MovieCardDetails from "../MovieCardDetails/MovieCardDetails";
 import MovieCard from "../MovieCard/MovieCard";
 
 class App extends React.Component {
@@ -54,8 +53,8 @@ class App extends React.Component {
             exact path="/movies/:id"     
             render={({match}) => {
               const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id));  
-              console.log('PLEASE', movieToRender)
-            return <MovieCard {...movieToRender} goBack={this.goBack}/>
+              //find the one movie that matches the id and then passes that movie object to movieCard
+            return <MovieCard {...movieToRender} />
           }}
         />
       </main>
