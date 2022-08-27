@@ -2,7 +2,7 @@ import React from "react"
 // import movieData from "./mockData"
 import MoviesContainer from "../MoviesContainer/MoviesContainer"
 import Header from "../Header/Header"
-import { Route, NavLink } from 'react-router-dom'
+import { Route, Switch, Router } from 'react-router-dom'
 import MovieCardDetails from "../MovieCardDetails/MovieCardDetails";
 import MovieCard from "../MovieCard/MovieCard";
 
@@ -13,8 +13,8 @@ class App extends React.Component {
       movies: [],
       error: ''
     }
-    this.showMovieDetails = this.showMovieDetails.bind(this)
-    this.goBack = this.goBack.bind(this)
+    // this.showMovieDetails = this.showMovieDetails.bind(this)
+    // this.goBack = this.goBack.bind(this)
   }
   fetchAllMovies() {
     console.log('hiiiiiiii')
@@ -32,22 +32,22 @@ class App extends React.Component {
   componentDidMount() {
     return this.fetchAllMovies()
   }
-  showMovieDetails = (id) => {
-    const selectedMovie = this.state.movies.filter(movie => movie.id === id)
-    this.setState({movies: selectedMovie})
-  }
+  // showMovieDetails = (id) => {
+  //   const selectedMovie = this.state.movies.filter(movie => movie.id === id)
+  //   this.setState({movies: selectedMovie})
+  // }
   goBack = () => {
     this.fetchAllMovies()
   }
   render() {
     return (
       <main>
-        <Route path="/" component={ Header }/>
+        <Header />
         {this.state.error && <h2>{this.state.error}</h2>}
         <Route
             exact path="/:movies"
             render={({ match }) => {
-              return <MoviesContainer name='movies' data={this.state.movies} />
+              return <MoviesContainer name={match.params.movies} data={this.state.movies} />
             }}
           />
         <Route

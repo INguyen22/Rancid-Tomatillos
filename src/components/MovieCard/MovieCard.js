@@ -1,10 +1,9 @@
 import React from "react"
 import HomeButton from "../HomeButton/HomeButton"
 import "./MovieCard.css"
-import { Route, NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 //globals
-let backdropImage;
 let releaseDate;
 let runTime;
 let genre;
@@ -23,7 +22,7 @@ const fetchMovieDetails = (movieId) => {
         })
 }
 
-const MovieCard = ({id, title, average_rating, backdrop_path, goBack}) => {
+const MovieCard = ({id, title, average_rating, backdrop_path}) => {
     // await fetchMovieDetails(id)
     // console.log(fetchedData)
     return (
