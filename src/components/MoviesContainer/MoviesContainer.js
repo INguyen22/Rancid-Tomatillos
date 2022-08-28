@@ -2,6 +2,7 @@ import React from "react"
 // import MovieCard from "../MovieCard/MovieCard"
 import "./MoviesContainer.css"
 // import "../MovieCard/MovieCard.css"
+import Header from "../Header/Header"
 import { NavLink } from 'react-router-dom'
 
 const MoviesContainer = ({ data, name }) => {
@@ -34,8 +35,11 @@ const MoviesContainer = ({ data, name }) => {
     })
 
     return (
+        <div>
+            <Header />
         <div className="movies-container">
             {movieCards}
+        </div>
         </div>
     )
 }

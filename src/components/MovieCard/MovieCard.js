@@ -5,6 +5,7 @@ import "./MovieCard.css"
 class MovieCard extends Component {
     constructor({id, title, average_rating, backdrop_path}) {
         super()
+        console.log('passed in id', id)
         this.state = {
             id: id,
             title: title,
@@ -16,7 +17,7 @@ class MovieCard extends Component {
             runtime: 0,
         }
     }
-    componentDidMount() {
+    fetchMovieDetails() {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}`)
         .then(response => response.json())
         .then(data => {
@@ -29,14 +30,25 @@ class MovieCard extends Component {
             })
         })
     }
+    componentDidMount() {
+        console.log('href', window.location.href)
+        const currentUrl = window.location.href
+        const splitUrl = currentUrl.split('/')
+        this.fetchMovieDetails()
+    }
+    componentDidUpdate(prevProp, prevState) {
+        console.log('prevstate', prevState)
+        // if(prevState.id !== this.state.)
+    }
     render() {
+        console.log('moviecardState', this.state)
         return (
             <div>
                 <HomeButton />
                 <img className="backdrop-img" src={this.state.backdropImage} alt={this.state.title}/>
                 <article className="details-container">
                     <h2 className="movie-title">{this.state.title}</h2>
-                    <p className="movie-details">{`⭐️ ${this.state.rating.toFixed(1)} stars ⭐️`}</p>
+                    <p className="movie-details">{`⭐️ ${this.state.rating} stars ⭐️`}</p>
                     <p>Release Date: {this.state.releaseDate}</p>
                     <p>Run Time: {this.state.runTime} minutes</p>
                     <p>Genres: {this.state.genre.join()}</p>
@@ -46,6 +58,7 @@ class MovieCard extends Component {
         )
     }
 }
+//removed .toFixed(1)
 
 // const MovieCard = ({id, title, average_rating, backdrop_path}) => {
 //     // await fetchMovieDetails(id)

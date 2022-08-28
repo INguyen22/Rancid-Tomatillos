@@ -36,32 +36,34 @@ class App extends React.Component {
   //   this.fetchAllMovies()
   // }
   render() {
-    console.log(this.state.movies)
     return (
       <main>
-        {/* <Route path="/" component={ Header }/> */}
-        <Redirect exact from="/" to="movies" />
-        <Header />
         {this.state.error && <h2>{this.state.error}</h2>}
-        {/* {!this.state.movies.length && <h2>Sorry no movies here</h2>} */}
-        {/* <Route exact path="/movies" render={() => <MoviesContainer name={'movies'} data={this.state.movies} />} /> */}
-        <Route
-            exact path="/:movies"
-            render={({ match }) => {
-              return <MoviesContainer name={'movies'} data={this.state.movies} />
-            }}
-          />
+        <Route exact path="/" render={() => <MoviesContainer name={'movies'} data={this.state.movies} />} />
         <Route
             exact path="/movies/:id"     
             render={({match}) => {
-              const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id));  
+              const movieToRender = this.state.movies.find(movie => {
+                console.log('params', match.params.id)
+                return movie.id === parseInt(match.params.id)
+              });  
+              console.log('hi', movieToRender)
               //find the one movie that matches the id and then passes that movie object to movieCard
-            return <MovieCard {...movieToRender} />
-          }}
-        />
+              return <MovieCard {...movieToRender} />
+            }}
+            />
       </main>
     )
   }
 }
 
 export default App
+{/* <Route path="/" component={ Header }/> */}
+{/* <Redirect exact from="/" to="movies" /> */}
+{/* <Header /> */}
+{/* <Route
+    exact path="/:movies"
+    render={({ match }) => {
+      return <MoviesContainer name={'movies'} data={this.state.movies} />
+    }}
+  /> */}
