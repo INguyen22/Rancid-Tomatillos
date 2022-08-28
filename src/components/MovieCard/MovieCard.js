@@ -24,7 +24,7 @@ class MovieCard extends Component {
             console.log(data.movie)
             this.setState({
                 id: data.movie.id,
-                rating: data.movie.average_rating,
+                rating: data.movie.average_rating.toFixed(1),
                 backdropImage: data.movie.backdrop_path,
                 releaseDate: data.movie.release_date,
                 overview: data.movie.overview,
