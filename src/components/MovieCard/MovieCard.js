@@ -7,8 +7,8 @@ class MovieCard extends Component {
         super()
         console.log('passed in id', id)
         this.state = {
-            id: id,
             title: title,
+            id: id,
             rating: average_rating,
             backdropImage: backdrop_path,
             releaseDate: '',
@@ -17,12 +17,15 @@ class MovieCard extends Component {
             runtime: 0,
         }
     }
-    fetchMovieDetails() {
-        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}`)
+    fetchMovieDetails(id) {
+        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
         .then(response => response.json())
         .then(data => {
             console.log(data.movie)
             this.setState({
+                id: data.movie.id,
+                rating: data.movie.average_rating,
+                backdropImage: data.movie.backdrop_path,
                 releaseDate: data.movie.release_date,
                 overview: data.movie.overview,
                 genre: data.movie.genres,
@@ -33,12 +36,12 @@ class MovieCard extends Component {
     componentDidMount() {
         console.log('href', window.location.href)
         const currentUrl = window.location.href
-        const splitUrl = currentUrl.split('/')
-        this.fetchMovieDetails()
-    }
-    componentDidUpdate(prevProp, prevState) {
-        console.log('prevstate', prevState)
-        // if(prevState.id !== this.state.)
+        let id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+        if(id) {
+        this.fetchMovieDetails(id)
+        } else {
+            this.fetchMovieDetails(this.state.id)
+        }
     }
     render() {
         console.log('moviecardState', this.state)

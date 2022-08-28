@@ -28,13 +28,6 @@ class App extends React.Component {
   componentDidMount() {
     return this.fetchAllMovies()
   }
-  // showMovieDetails = (id) => {
-  //   const selectedMovie = this.state.movies.filter(movie => movie.id === id)
-  //   this.setState({movies: selectedMovie})
-  // }
-  // goBack = () => {
-  //   this.fetchAllMovies()
-  // }
   render() {
     return (
       <main>
@@ -58,12 +51,3 @@ class App extends React.Component {
 }
 
 export default App
-{/* <Route path="/" component={ Header }/> */}
-{/* <Redirect exact from="/" to="movies" /> */}
-{/* <Header /> */}
-{/* <Route
-    exact path="/:movies"
-    render={({ match }) => {
-      return <MoviesContainer name={'movies'} data={this.state.movies} />
-    }}
-  /> */}
