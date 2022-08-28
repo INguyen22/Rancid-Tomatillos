@@ -1,19 +1,35 @@
 import React from "react"
-import MovieCard from "../MovieCard/MovieCard"
+// import MovieCard from "../MovieCard/MovieCard"
 import "./MoviesContainer.css"
+// import "../MovieCard/MovieCard.css"
+import { NavLink } from 'react-router-dom'
 
-const MoviesContainer = ({ movies , showMovieDetails, goBack}) => {
-    const movieCards = movies.map(movie => {
+const MoviesContainer = ({ data, name }) => {
+    console.log('this.state.movies', data)
+    const movieCards = data.map(movie => {
+        const {id, poster_path, title} = movie
         return (
-            <MovieCard 
-                key = {movie.id}
-                id = {movie.id}
-                posterImage = {movie.poster_path}
-                title = {movie.title}
-                // releaseDate = {movie.release_date}
-                showMovieDetails = {showMovieDetails}
-                goBack = {goBack}
-                />
+            <NavLink to={`/${name}/${id}`} key={id}>
+                {/* <MovieCard 
+                    key = {id}
+                    id = {id}
+                    posterImage = {poster_path}
+                    title = {title}
+                    showMovieDetails = {showMovieDetails}
+                    goBack = {goBack}
+                /> */}
+                <img src={poster_path} alt={title} className="card"/>
+            </NavLink>
+            // <NavLink> 
+                // <MovieCard 
+                //     key = {id}
+                //     id = {id}
+                //     posterImage = {poster_path}
+                //     title = {title}
+                //     showMovieDetails = {showMovieDetails}
+                //     goBack = {goBack}
+                // />
+            // </NavLink>
         )
     })
 

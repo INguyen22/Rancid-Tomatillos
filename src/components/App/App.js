@@ -2,6 +2,8 @@ import React from "react"
 // import movieData from "./mockData"
 import MoviesContainer from "../MoviesContainer/MoviesContainer"
 import Header from "../Header/Header"
+import { Route, Redirect } from 'react-router-dom'
+import MovieCard from "../MovieCard/MovieCard";
 
 class App extends React.Component {
   constructor() {
@@ -10,8 +12,6 @@ class App extends React.Component {
       movies: [],
       error: ''
     }
-    this.showMovieDetails = this.showMovieDetails.bind(this)
-    this.goBack = this.goBack.bind(this)
   }
   fetchAllMovies() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
@@ -28,19 +28,37 @@ class App extends React.Component {
   componentDidMount() {
     return this.fetchAllMovies()
   }
-  showMovieDetails = (id) => {
-    const selectedMovie = this.state.movies.filter(movie => movie.id === id)
-    this.setState({movies: selectedMovie})
-  }
-  goBack = () => {
-    this.fetchAllMovies()
-  }
+  // showMovieDetails = (id) => {
+  //   const selectedMovie = this.state.movies.filter(movie => movie.id === id)
+  //   this.setState({movies: selectedMovie})
+  // }
+  // goBack = () => {
+  //   this.fetchAllMovies()
+  // }
   render() {
+    console.log(this.state.movies)
     return (
       <main>
+        {/* <Route path="/" component={ Header }/> */}
+        <Redirect exact from="/" to="movies" />
         <Header />
         {this.state.error && <h2>{this.state.error}</h2>}
-        <MoviesContainer movies={this.state.movies} showMovieDetails={this.showMovieDetails} goBack={this.goBack}/>
+        {/* {!this.state.movies.length && <h2>Sorry no movies here</h2>} */}
+        {/* <Route exact path="/movies" render={() => <MoviesContainer name={'movies'} data={this.state.movies} />} /> */}
+        <Route
+            exact path="/:movies"
+            render={({ match }) => {
+              return <MoviesContainer name={'movies'} data={this.state.movies} />
+            }}
+          />
+        <Route
+            exact path="/movies/:id"     
+            render={({match}) => {
+              const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id));  
+              //find the one movie that matches the id and then passes that movie object to movieCard
+            return <MovieCard {...movieToRender} />
+          }}
+        />
       </main>
     )
   }
