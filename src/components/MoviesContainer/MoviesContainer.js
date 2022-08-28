@@ -1,11 +1,11 @@
 import React from "react"
-import MovieCard from "../MovieCard/MovieCard"
+// import MovieCard from "../MovieCard/MovieCard"
 import "./MoviesContainer.css"
-import "../MovieCard/MovieCard.css"
-import { Route, NavLink } from 'react-router-dom'
+// import "../MovieCard/MovieCard.css"
+import { NavLink } from 'react-router-dom'
 
 const MoviesContainer = ({ data, name }) => {
-    console.log(data)
+    console.log('this.state.movies', data)
     const movieCards = data.map(movie => {
         const {id, poster_path, title} = movie
         return (
