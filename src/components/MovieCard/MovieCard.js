@@ -5,9 +5,10 @@ import "./MovieCard.css"
 class MovieCard extends Component {
     constructor({id, title, average_rating, backdrop_path}) {
         super()
+        console.log('passed in id', id)
         this.state = {
-            id: id,
             title: title,
+            id: id,
             rating: average_rating,
             backdropImage: backdrop_path,
             releaseDate: '',
@@ -16,12 +17,15 @@ class MovieCard extends Component {
             runtime: 0,
         }
     }
-    componentDidMount() {
-        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}`)
+    fetchMovieDetails(id) {
+        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
         .then(response => response.json())
         .then(data => {
             console.log(data.movie)
             this.setState({
+                id: data.movie.id,
+                rating: data.movie.average_rating.toFixed(1),
+                backdropImage: data.movie.backdrop_path,
                 releaseDate: data.movie.release_date,
                 overview: data.movie.overview,
                 genre: data.movie.genres,
@@ -29,14 +33,25 @@ class MovieCard extends Component {
             })
         })
     }
+    componentDidMount() {
+        console.log('href', window.location.href)
+        const currentUrl = window.location.href
+        let id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+        if(id) {
+        this.fetchMovieDetails(id)
+        } else {
+            this.fetchMovieDetails(this.state.id)
+        }
+    }
     render() {
+        console.log('moviecardState', this.state)
         return (
             <div>
                 <HomeButton />
                 <img className="backdrop-img" src={this.state.backdropImage} alt={this.state.title}/>
                 <article className="details-container">
                     <h2 className="movie-title">{this.state.title}</h2>
-                    <p className="movie-details">{`⭐️ ${this.state.rating.toFixed(1)} stars ⭐️`}</p>
+                    <p className="movie-details">{`⭐️ ${this.state.rating} stars ⭐️`}</p>
                     <p>Release Date: {this.state.releaseDate}</p>
                     <p>Run Time: {this.state.runTime} minutes</p>
                     <p>Genres: {this.state.genre.join()}</p>
@@ -46,6 +61,7 @@ class MovieCard extends Component {
         )
     }
 }
+//removed .toFixed(1)
 
 // const MovieCard = ({id, title, average_rating, backdrop_path}) => {
 //     // await fetchMovieDetails(id)
