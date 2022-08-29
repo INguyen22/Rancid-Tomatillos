@@ -33,6 +33,7 @@ class MovieCard extends Component {
             })
         })
     }
+
     componentDidMount() {
         console.log('href', window.location.href)
         const currentUrl = window.location.href
@@ -46,17 +47,35 @@ class MovieCard extends Component {
     render() {
         console.log('moviecardState', this.state)
         return (
-            <div>
+            <div className="movie-details-container">
                 <HomeButton />
-                <img className="backdrop-img" src={this.state.backdropImage} alt={this.state.title}/>
-                <article className="details-container">
-                    <h2 className="movie-title">{this.state.title}</h2>
-                    <p className="movie-details">{`⭐️ ${this.state.rating} stars ⭐️`}</p>
-                    <p>Release Date: {this.state.releaseDate}</p>
-                    <p>Run Time: {this.state.runTime} minutes</p>
-                    <p>Genres: {this.state.genre.join()}</p>
-                    <p>Description: {this.state.overview}</p>
-                </article>
+                <div className="details-container">
+                    <img className="backdrop-img" src={this.state.backdropImage} alt={this.state.title}/>
+                
+                    <article className="details-text">
+
+                        <div className="title-details-container">
+
+                            <div className="title-container">
+                                <h2 className="movie-title">{this.state.title}</h2>
+                                <p className="movie-rating">{`${this.state.rating} stars ⭐️`}</p>
+                            </div>
+
+                            <div className="release-runtime-genre-container">
+                                <p>Release Date:  {this.state.releaseDate}</p>
+                                <p>Run Time:  {this.state.runTime} minutes</p>
+                                <p>Genres:  {this.state.genre.join(', ')}</p>
+                            </div>
+
+                        </div>
+
+                        <div className="description">
+                            <p>Description:  {this.state.overview}</p>
+                        </div>
+
+                    </article>
+
+                </div>
             </div>
         )
     }
