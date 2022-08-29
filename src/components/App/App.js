@@ -1,8 +1,7 @@
 import React from "react"
 // import movieData from "./mockData"
 import MoviesContainer from "../MoviesContainer/MoviesContainer"
-import Header from "../Header/Header"
-import { Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import MovieCard from "../MovieCard/MovieCard";
 
 class App extends React.Component {
