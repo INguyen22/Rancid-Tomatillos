@@ -1,0 +1,16 @@
+{
+    "movie":{
+        "id":627290,
+        "title":"Antebellum",
+        "poster_path":"https://image.tmdb.org/t/p/original//irkse1FMm9dWemwlxKJ7RINT9Iy.jpg",
+        "backdrop_path":"https://image.tmdb.org/t/p/original//pGqBDYycGWsMYc57sYv5M9GAQoW.jpg",
+        "release_date":"2020-09-02",
+        "overview":"Successful author Veronica finds herself trapped in a horrifying reality and must uncover the mind-bending mystery before it's too late.",
+        "genres":["Horror"],
+        "budget":0,
+        "revenue":0,
+        "runtime":105,
+        "tagline":"If it chooses you, nothing can save you.",
+        "average_rating":6.571428571428571
+    }
+}

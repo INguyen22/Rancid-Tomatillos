@@ -21,7 +21,7 @@ class MovieCard extends Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data.movie)
+            console.log('data.movie: ', data.movie)
             this.setState({
                 id: data.movie.id,
                 rating: data.movie.average_rating.toFixed(1),
