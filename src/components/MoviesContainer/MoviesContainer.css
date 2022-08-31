@@ -2,5 +2,6 @@
     background-color: rgb(30, 31, 32);
     display: flex;
     flex-wrap: wrap;
+    color: whitesmoke;
     justify-content: space-evenly;
   }

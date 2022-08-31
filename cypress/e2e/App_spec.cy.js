@@ -50,4 +50,21 @@ describe('App', () => {
       .go('forward')
       .url().should('eq', 'http://localhost:3000/movies/694919')
   })
+  it('should be able to find a movie by their title', () => {
+    cy.get('input[type="text"]').type('Money Plane').should('have.value', 'Money Plane')
+    .get('img').should('have.class', 'card').should('have.attr', 'src').should('include', "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg")
+  })
+  it('should be able to find another movie by their title', () => {
+    cy.get('input[type="text"]').type('Antebellum').should('have.value', 'Antebellum')
+    .get('img').should('have.class', 'card').should('have.attr', 'src').should('include', "https://image.tmdb.org/t/p/original//irkse1FMm9dWemwlxKJ7RINT9Iy.jpg")
+  })
+  it('should be able to see an error message if there no movies with searched title', () => {
+    cy.get('input[type="text"]').type('Anteballum').should('have.value', 'Anteballum')
+    .get('h2').contains("Sorry there are no movies with that title, please try again🥲")
+  })
+  it('error should go away when there is a movie with searched title', () => {
+    cy.get('input[type="text"]').type('Anteballum')
+    .get('h2').contains("Sorry there are no movies with that title, please try again🥲")
+    .get('input[type="text"]').type('Antebellum').clear('h2')
+  })
 })

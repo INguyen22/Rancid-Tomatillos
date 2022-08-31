@@ -34,12 +34,14 @@ class MoviesContainer extends Component {
                 </NavLink>
             )
         })
+        console.log('filtered movies: ', filteredMovies)
         return (
             <div>
             <Header />
             <Form searchQuery={this.state.searchQuery} onSearchQueryChange={this.onSearchQueryChange}/>
         <div className="movies-container">
             {this.state.searchQuery === '' ? movieCards : filteredMovies}
+            {filteredMovies.length === 0 && <h2>Sorry there are no movies with that title, please try again🥲</h2>}
         </div>
         </div>
         )
