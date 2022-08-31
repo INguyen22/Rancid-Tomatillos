@@ -38,9 +38,7 @@ class App extends React.Component {
               const movieToRender = this.state.movies.find(movie => {
                 console.log('params', match.params.id)
                 return movie.id === parseInt(match.params.id)
-              });  
-              console.log('hi', movieToRender)
-              //find the one movie that matches the id and then passes that movie object to movieCard
+              }); 
               return <MovieCard {...movieToRender} />
             }}
             />
