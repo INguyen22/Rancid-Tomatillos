@@ -15,6 +15,9 @@ describe('App', () => {
   })
   it('Should be able to click on single movie and view selected movie details', () => {
     cy.get('img').first().click()
+      .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
+      fixture: 'movie1'
+    })
       .get('.backdrop-img').should('have.attr', 'src').should('include', "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg")
       .get('h2').contains('Money Plane')
       .get('.movie-rating').contains('6.875 stars ⭐️')
@@ -26,6 +29,9 @@ describe('App', () => {
   })
   it('Should be able to click on a different movie and view selected movie details', () => {
     cy.get('img').last().click()
+    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/627290', {
+      fixture: 'movie2'
+    })
       .get('.backdrop-img').should('have.attr', 'src').should('include', "https://image.tmdb.org/t/p/original//pGqBDYycGWsMYc57sYv5M9GAQoW.jpg")
       .get('h2').contains('Antebellum')
       .get('.movie-rating').contains('6.6 stars ⭐️')
