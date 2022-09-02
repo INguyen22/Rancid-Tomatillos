@@ -61,7 +61,7 @@ Future features could include:
 - Movie details would update over time
 
 ## Deployed Page
-Visit the published site [here](-deployment site goes here-)
+Visit the published site [here](https://inguyen22.github.io/Rancid-Tomatillos/)
 
 ## Set Up
 1. Fork this repo
