@@ -41,6 +41,14 @@ describe('App', () => {
       .get('.description').contains("Description: Successful author Veronica finds herself trapped in a horrifying reality and must uncover the mind-bending mystery before it's too late.")
       .url().should('eq', 'http://localhost:3000/movies/627290')
   })
+  it('should be able to see trailers for a movie', () => {
+    cy.get('img').first().click()
+    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
+    fixture: 'movie1'
+  })
+  .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', {fixture: 'trailer'})
+  .get('iframe').should('not.be.empty')
+  })
   it('Should be able to click home button and view all movies again', () => {
     cy.get('img').first().click()
       .get('.home-button').click()

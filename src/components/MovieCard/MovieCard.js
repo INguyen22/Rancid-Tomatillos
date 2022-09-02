@@ -1,6 +1,7 @@
 import React, { Component } from "react"
-import { fetchMovieDetails } from "../../Apicalls"
+import { fetchMovieDetails, fetchMovieTrailers } from "../../Apicalls"
 import HomeButton from "../HomeButton/HomeButton"
+import Trailers from "../Trailers/Trailers"
 import "./MovieCard.css"
 
 class MovieCard extends Component {
@@ -15,6 +16,7 @@ class MovieCard extends Component {
             overview: '',
             genre: [],
             runtime: 0,
+            trailers: [],
         }
     }
 
@@ -33,6 +35,11 @@ class MovieCard extends Component {
                     runTime: data.movie.runtime
             })
         })
+            fetchMovieTrailers(id).then(data => {
+                console.log('trailer data', data)
+                // console.log('trailer state', this.state.trailers)
+                this.setState({trailers: data.videos})
+            })
         } else {
             fetchMovieDetails(this.state.id).then(data => {
                 this.setState({
@@ -45,6 +52,10 @@ class MovieCard extends Component {
                     runTime: data.movie.runtime
                 })
             })
+            fetchMovieTrailers(this.state.id).then(data => {
+                console.log('trailer data', data.videos)
+                this.setState({trailers: data.videos})
+            })
         }
     }
     render() {
@@ -53,6 +64,9 @@ class MovieCard extends Component {
                 <HomeButton />
                 <div className="details-container">
                     <img className="backdrop-img" src={this.state.backdropImage} alt={this.state.title}/>
+                    <div className="trailer-container">
+                        {!this.state.trailers ? <h3>Sorry there are no trailers available for this movie</h3> : <Trailers videos={this.state.trailers}/>}
+                    </div>
                     <article className="details-text">
                         <div className="title-details-container">
                             <div className="title-container">
