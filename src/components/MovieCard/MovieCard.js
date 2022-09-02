@@ -63,10 +63,14 @@ class MovieCard extends Component {
             <div className="movie-details-container">
                 <HomeButton />
                 <div className="details-container">
-                    <img className="backdrop-img" src={this.state.backdropImage} alt={this.state.title}/>
-                    <div className="trailer-container">
-                        {!this.state.trailers ? <h3>Sorry there are no trailers available for this movie</h3> : <Trailers videos={this.state.trailers}/>}
-                    </div>
+
+                    <section className='backdrop-trailer'>
+                        <div className="trailer-container">
+                            {!this.state.trailers.length ? <h3>Sorry there are no trailers available for this movie</h3> : <Trailers videos={this.state.trailers}/>}
+                        </div>
+                        <img className="backdrop-img" src={this.state.backdropImage} alt={this.state.title}/>
+                    </section>
+
                     <article className="details-text">
                         <div className="title-details-container">
                             <div className="title-container">
