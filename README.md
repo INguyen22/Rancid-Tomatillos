@@ -38,9 +38,17 @@
 
 ## Illustrations and Demo
 ![Sep-02-2022 15-12-10](https://user-images.githubusercontent.com/100492419/188236048-de4ae452-aff3-408f-83b0-fd94608edde1.gif)
+
+----
 ![Sep-02-2022 15-14-28](https://user-images.githubusercontent.com/100492419/188236283-e3a57b3e-bccb-4b53-b677-18bbf2b4d2c0.gif)
+
+----
 ![Sep-02-2022 15-15-20](https://user-images.githubusercontent.com/100492419/188236396-8c4ba75c-3ae3-4aa1-a399-4c78d92206fe.gif)
+
+----
 ![Sep-02-2022 15-16-29](https://user-images.githubusercontent.com/100492419/188236527-a0a83e39-6ad1-493e-a1ef-e28ff50b7667.gif)
+
+----
 
 ## Project Reflections
 #### Wins
