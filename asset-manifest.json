@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/rancidtoma/static/css/main.c25c7433.css",
-    "main.js": "/rancidtoma/static/js/main.484cb584.js",
-    "static/js/787.9a07f69e.chunk.js": "/rancidtoma/static/js/787.9a07f69e.chunk.js",
-    "static/media/retro-banner.png": "/rancidtoma/static/media/retro-banner.65f7456be755655cf06f.png",
-    "static/media/tall-projector.gif": "/rancidtoma/static/media/tall-projector.0f04e54584502a9e3c7a.gif",
-    "index.html": "/rancidtoma/index.html",
-    "main.c25c7433.css.map": "/rancidtoma/static/css/main.c25c7433.css.map",
-    "main.484cb584.js.map": "/rancidtoma/static/js/main.484cb584.js.map",
-    "787.9a07f69e.chunk.js.map": "/rancidtoma/static/js/787.9a07f69e.chunk.js.map"
+    "main.css": "/static/css/main.12c31269.css",
+    "main.js": "/static/js/main.53785065.js",
+    "static/js/787.9a07f69e.chunk.js": "/static/js/787.9a07f69e.chunk.js",
+    "static/media/retro-banner.png": "/static/media/retro-banner.65f7456be755655cf06f.png",
+    "static/media/tall-projector.gif": "/static/media/tall-projector.0f04e54584502a9e3c7a.gif",
+    "index.html": "/index.html",
+    "main.12c31269.css.map": "/static/css/main.12c31269.css.map",
+    "main.53785065.js.map": "/static/js/main.53785065.js.map",
+    "787.9a07f69e.chunk.js.map": "/static/js/787.9a07f69e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c25c7433.css",
-    "static/js/main.484cb584.js"
+    "static/css/main.12c31269.css",
+    "static/js/main.53785065.js"
   ]
 }
