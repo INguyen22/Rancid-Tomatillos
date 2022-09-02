@@ -3,7 +3,7 @@ describe('App', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       fixture: 'movieData'
     })
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/').wait(5000)
   })
   it('Should have a header', () => {
     cy.contains('Rancid Tomatillos')
