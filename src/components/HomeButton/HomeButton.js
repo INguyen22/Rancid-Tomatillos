@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const HomeButton = () => {
     return (
             <button className="home-button">
-                <Link to={`/`}><img className="home-icon"  src={HomeIcon} alt="home icon"/></Link>
+                <Link to={`/Rancid-Tomatillos`}><img className="home-icon"  src={HomeIcon} alt="home icon"/></Link>
             </button>
     )
 }

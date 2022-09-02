@@ -25,9 +25,9 @@ class App extends React.Component {
     return (
       <main>
         {this.state.error && <h2>{this.state.error}</h2>}
-        <Route exact path="/" render={() => this.state.loading === true ? <LoadingPage /> : <MoviesContainer name={'movies'} data={this.state.movies} />} />
+        <Route exact path="/Rancid-Tomatillos" render={() => this.state.loading === true ? <LoadingPage /> : <MoviesContainer name={'movies'} data={this.state.movies} />} />
         <Route
-            exact path="/movies/:id"     
+            exact path="/Rancid-Tomatillos/movies/:id"     
             render={({match}) => {
               const movieToRender = this.state.movies.find(movie => {
                 return movie.id === parseInt(match.params.id)

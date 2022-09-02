@@ -3,7 +3,7 @@ describe('App', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       fixture: 'movieData'
     })
-    cy.visit('http://localhost:3000/').wait(5000)
+    cy.visit('http://localhost:3000/Rancid-Tomatillos').wait(5000)
   })
   it('Should have a header', () => {
     cy.contains('Rancid Tomatillos')
@@ -15,7 +15,7 @@ describe('App', () => {
   })
   it('Should be able to click on single movie and view selected movie details', () => {
     cy.get('img').first().click()
-      .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
+      .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/Rancid-Tomatillos/movies/694919', {
       fixture: 'movie1'
     })
       .get('.backdrop-img').should('have.attr', 'src').should('include', "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg")
@@ -25,7 +25,7 @@ describe('App', () => {
       .get('.release-runtime-genre-container').contains('Run Time: 82 minutes')
       .get('.release-runtime-genre-container').contains('Genres: Action')
       .get('.description').contains("Description: A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals.")
-      .url().should('eq', 'http://localhost:3000/movies/694919')
+      .url().should('eq', 'http://localhost:3000/Rancid-Tomatillos/movies/694919')
   })
   it('Should be able to click on a different movie and view selected movie details', () => {
     cy.get('img').last().click()
@@ -39,7 +39,7 @@ describe('App', () => {
       .get('.release-runtime-genre-container').contains('Run Time: 105 minutes')
       .get('.release-runtime-genre-container').contains('Genres: Horror')
       .get('.description').contains("Description: Successful author Veronica finds herself trapped in a horrifying reality and must uncover the mind-bending mystery before it's too late.")
-      .url().should('eq', 'http://localhost:3000/movies/627290')
+      .url().should('eq', 'http://localhost:3000/Rancid-Tomatillos/movies/627290')
   })
   it('should be able to see trailers for a movie', () => {
     cy.get('img').first().click()
@@ -54,15 +54,15 @@ describe('App', () => {
       .get('.home-button').click()
       .get('img').first().should('have.class', 'card').should('have.attr', 'src').should('include', "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg")
       .get('img').last().should('have.class', 'card').should('have.attr', 'src').should('include', "https://image.tmdb.org/t/p/original//irkse1FMm9dWemwlxKJ7RINT9Iy.jpg")
-      .url().should('eq', 'http://localhost:3000/')
+      .url().should('eq', 'http://localhost:3000/Rancid-Tomatillos')
   })
   it('Should be able to use the browser arrow buttons to go between movie details page and main page', () => {
     cy.get('img').first().click()
-      .url().should('eq', 'http://localhost:3000/movies/694919')
+      .url().should('eq', 'http://localhost:3000/Rancid-Tomatillos/movies/694919')
       .go('back')
-      .url().should('eq', 'http://localhost:3000/')
+      .url().should('eq', 'http://localhost:3000/Rancid-Tomatillos')
       .go('forward')
-      .url().should('eq', 'http://localhost:3000/movies/694919')
+      .url().should('eq', 'http://localhost:3000/Rancid-Tomatillos/movies/694919')
   })
   it('should be able to find a movie by their title', () => {
     cy.get('input[type="text"]').type('Money Plane').should('have.value', 'Money Plane')
