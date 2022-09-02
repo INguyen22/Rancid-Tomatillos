@@ -1,0 +1,61 @@
+.loading-container {
+    height: 100vh;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* subtle zoom to attention and then back */
+.loading-word {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 6rem;
+    font-weight: 600;
+    color: whitesmoke;
+    text-transform: uppercase;
+    margin: 1rem;
+    animation: 3s anim-loadingword ease;
+  }
+
+  .loading-word:nth-child(2) {
+    animation-delay: 1s;
+  }
+
+  .loading-word:nth-child(3) {
+    animation-delay: 2s;
+  }
+  
+  @keyframes anim-loadingword {
+    0% {
+      color: rgb(252, 252, 252);
+      transform: scale(0);
+      opacity: 0;
+      text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    25% {
+      color: rgb(255, 213, 0);
+      transform: scale(2);
+      opacity: 1;
+      text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+      color: rgb(255, 255, 255);
+      transform: scale(1);
+      opacity: 1;
+      text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      /* animate nothing to add pause at the end of animation */
+      transform: scale(1);
+      opacity: 1;
+      text-shadow: 1px 0 0 rgba(255, 255, 255, 0);
+    }
+  }
