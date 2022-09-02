@@ -1,42 +1,86 @@
 # 🍿 Rancid Tomatillos 🎬
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Learning Goals](#learning-goals)
+- [Technologies and Tools](#technologies-and-tools)
+- [Illustrations & Demo](#illustrations-and-demo)
+- [Project Reflections](#project-reflections)
+- [Roadmap](#roadmap)
+- [Deployed Page](#deployed-page)
+- [Set Up](#set-up)
+- [Contributors](#contributors)
+- [Sources](#sources)
+- [Project Specs](#project-specs)
+
 ## Introduction
- - The purpose of this project was to allow students to practice some of the foundational concepts learned so far within the module. There are other extensions that test different skills that we can build on. The project allowed us to personalize/entertain different ideas with HTML/CSS as well as the functionality(JavaScript) behind the web page created.
+- This application will allow a user to view a movie library, click on an individual movie poster to see full details of that selected movie, and watch a trailer of the selected movie. The purpose of the project was to implement a React framework, utilize React Router, and perform End-to-End testing using Cypress. 
 
-## Technologies
- - Javascript
- - HTML
- - CSS
- - React
- - Router
- - Cypress
+## Learning Goals
+- Gain competency with React fundamentals
+- Learn how to test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
 
-## Illustrations
+## Technologies and Tools
+- Javascript
+- HTML
+- CSS
+- npm
+- Node.js
+- React
+- Router
+- Cypress Testing
+- RESTful API
+- ReactPlayer
+- GitHub Projects
+- GitHub Issues
+
+## Illustrations and Demo
  <img >
 
-## Features
+## Project Reflections
+#### Wins
+- 
+- 
 
+#### Challenges
+- 
+- 
+
+## Roadmap
+Future features could include:
+- User would have to option to "favorite" a movie by clicking a heart on the movie poster or individual movie page
+- User would be able to add a new movie
+- Movie details would update over time
 
 ## Deployed Page
 Visit the published site [here](-deployment site goes here-)
 
-## Possible Future Extensions
-
-
 ## Set Up
 1. Fork this repo
 2. Clone the repo to your local machine
-3. View the project in the browser by running open index.html in your terminal.
+3. `cd` into the root of the project directory
+4. Run `npm install`
+5. Run `npm start`
 
+## Contributors
+ Shauna MacFarlane-Okongo
+ - [LinkedIn](https://github.com/DrSLMac)
+ - [GitHub](https://github.com/DrSLMac)
+ 
+ Ivy Nguyen
+ - [LinkedIn](https://github.com/INguyen22)
+ - [GitHub](https://github.com/INguyen22)
+ 
 ## Sources
  - [MDN](http://developer.mozilla.org/en-US/)
  - [YouTube](https://www.youtube.com/)
  - [W3Schools](https://www.w3schools.com/)
-
-## Contributors
-   
- - [Shauna MacFarlane-Okongo](https://github.com/DrSLMac)
- - [Ivy Nguyen](https://github.com/INguyen22)
+ - [Heroku cloud PaaS](https://heroku.com/)
+ - [Router docs](https://reactrouter.com/)
+ - [Cypress docs](https://docs.cypress.io/guides/overview/why-cypress)
+ - [Medium](https://medium.com/)
 
 ## Project Specs
  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
