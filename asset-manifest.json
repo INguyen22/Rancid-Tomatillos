@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Rancid-Tomatillos/static/css/main.203c3b4e.css",
-    "main.js": "/Rancid-Tomatillos/static/js/main.428286fe.js",
-    "static/js/787.9a07f69e.chunk.js": "/Rancid-Tomatillos/static/js/787.9a07f69e.chunk.js",
-    "static/media/retro-banner.png": "/Rancid-Tomatillos/static/media/retro-banner.65f7456be755655cf06f.png",
-    "static/media/tall-projector.gif": "/Rancid-Tomatillos/static/media/tall-projector.0f04e54584502a9e3c7a.gif",
-    "index.html": "/Rancid-Tomatillos/index.html",
-    "main.203c3b4e.css.map": "/Rancid-Tomatillos/static/css/main.203c3b4e.css.map",
-    "main.428286fe.js.map": "/Rancid-Tomatillos/static/js/main.428286fe.js.map",
-    "787.9a07f69e.chunk.js.map": "/Rancid-Tomatillos/static/js/787.9a07f69e.chunk.js.map"
+    "main.css": "/static/css/main.12c31269.css",
+    "main.js": "/static/js/main.53785065.js",
+    "static/js/787.9a07f69e.chunk.js": "/static/js/787.9a07f69e.chunk.js",
+    "static/media/retro-banner.png": "/static/media/retro-banner.65f7456be755655cf06f.png",
+    "static/media/tall-projector.gif": "/static/media/tall-projector.0f04e54584502a9e3c7a.gif",
+    "index.html": "/index.html",
+    "main.12c31269.css.map": "/static/css/main.12c31269.css.map",
+    "main.53785065.js.map": "/static/js/main.53785065.js.map",
+    "787.9a07f69e.chunk.js.map": "/static/js/787.9a07f69e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.203c3b4e.css",
-    "static/js/main.428286fe.js"
+    "static/css/main.12c31269.css",
+    "static/js/main.53785065.js"
   ]
 }
