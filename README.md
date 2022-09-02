@@ -37,28 +37,29 @@
 - GitHub Issues
 
 ## Illustrations and Demo
- ![Sep-02-2022 15-12-10](https://user-images.githubusercontent.com/100492419/188236048-de4ae452-aff3-408f-83b0-fd94608edde1.gif)
+![Sep-02-2022 15-12-10](https://user-images.githubusercontent.com/100492419/188236048-de4ae452-aff3-408f-83b0-fd94608edde1.gif)
 ![Sep-02-2022 15-14-28](https://user-images.githubusercontent.com/100492419/188236283-e3a57b3e-bccb-4b53-b677-18bbf2b4d2c0.gif)
 ![Sep-02-2022 15-15-20](https://user-images.githubusercontent.com/100492419/188236396-8c4ba75c-3ae3-4aa1-a399-4c78d92206fe.gif)
 ![Sep-02-2022 15-16-29](https://user-images.githubusercontent.com/100492419/188236527-a0a83e39-6ad1-493e-a1ef-e28ff50b7667.gif)
 
 ## Project Reflections
 #### Wins
-- Using React router to navigate between different views and urls without using conditional rendering. 
-- Having a laoding animation appear when the user first logs into the webpage. 
-- Develope a function that allows users to search for a movie and have the filtered movies actively change as the usr input changes.
+- Using React router to navigate between different views and URLs without using conditional rendering. 
+- Having a loading animation appear when the user first loads webpage. 
+- Develop a function that allows users to search for a movie and have the filtered movies actively change as the user's search input changes.
 - Learning how to write and run tests in Cypress
 
 #### Challenges
-- Figuring out how to use react router to render different views
+- Figuring out how to use React Router to render different views
 - How to have the movies filter out as the user fills in the input field.
-- Having only the laoding page appear when the user first logs in.
+- Having only the loading page appear when the user first logs in.
 
 ## Roadmap
 Future features could include:
 - User would have to option to "favorite" a movie by clicking a heart on the movie poster or individual movie page
 - User would be able to add a new movie
 - Movie details would update over time
+- User would be able to filter movies by genre
 
 ## Deployed Page
 Visit the published site [here](https://inguyen22.github.io/Rancid-Tomatillos/)
