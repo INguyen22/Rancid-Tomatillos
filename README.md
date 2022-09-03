@@ -1,6 +1,6 @@
-# 🍿 Rancid Tomatillos 🎬
+<img width="1664" alt="Screen Shot 2022-09-02 at 10 34 40 PM" src="https://user-images.githubusercontent.com/102887963/188254303-96da8acc-55c7-4fcb-ae02-1ad09c3ed495.png">
 
-## Table of Contents
+## 🍿 Table of Contents 🎬
 - [Introduction](#introduction)
 - [Learning Goals](#learning-goals)
 - [Technologies and Tools](#technologies-and-tools)
