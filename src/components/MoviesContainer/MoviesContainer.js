@@ -20,7 +20,7 @@ class MoviesContainer extends Component {
         const { data, name } = this.props
         const movieCards = data.map(movie => {const {id, poster_path, title} = movie
                     return (
-                        <NavLink to={`/${name}/${id}`} key={id}>
+                        <NavLink to={`/Rancid-Tomatillos/${name}/${id}`} key={id}>
                             <img src={poster_path} alt={title} className="card"/>
                         </NavLink>
                     )
@@ -29,7 +29,7 @@ class MoviesContainer extends Component {
             return movie.title.toLowerCase().startsWith(this.state.searchQuery.toLowerCase())
         }).map(filteredMovie => {const {id, poster_path, title} = filteredMovie
             return (
-                <NavLink to={`/${name}/${id}`} key={id}>
+                <NavLink to={`/Rancid-Tomatillos/${name}/${id}`} key={id}>
                     <img src={poster_path} alt={title} className="card"/>
                 </NavLink>
             )
